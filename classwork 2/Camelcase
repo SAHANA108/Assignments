@@ -1,8 +1,35 @@
-s = raw_input()
-ans = 1
-assert len(s) >= 1 and len(s) <= 100000
-for c in s:
-    if ord(c) >= ord('A') and ord(c) <= ord('Z'):
-        ans = ans + 1
+#!/bin/python3
 
-print ans
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'camelcase' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts STRING s as parameter.
+#
+
+def camelcase(s):
+    # Write your code here
+    count=0
+    for j,i in enumerate( s):
+        if i.islower() and j==0:
+            count+=1
+        if i.isupper():
+            count+=1
+    return count
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = camelcase(s)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
