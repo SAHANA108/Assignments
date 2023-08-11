@@ -1,0 +1,8 @@
+s = raw_input()
+ans = 1
+assert len(s) >= 1 and len(s) <= 100000
+for c in s:
+    if ord(c) >= ord('A') and ord(c) <= ord('Z'):
+        ans = ans + 1
+
+print ans
